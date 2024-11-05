@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "ava-exam"
+version = "0.1.0"
+description = ""
+authors = ["cynthia"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.3"
+xlrd = "^2.0.1"
+pyarrow = "^17.0.0"
+openpyxl = "^3.1.5"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+jupyter = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
