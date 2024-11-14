@@ -1,0 +1,27 @@
+// Data Preparation Pipeline
+digraph {
+	Groupage [label="Groupage Data" shape=folder]
+	Innight [label="Innight Data" shape=folder]
+	Pallet [label="Pallet Data" shape=folder]
+	RoadFreight [label="Road Freight Data" shape=folder]
+	Customer [label="Customer Data" shape=folder]
+	Coordinates [label="Coordinates Data" shape=folder]
+	Load [label="Load Main Datasets" shape=box]
+	Combine [label="Combine Datasets" shape=box]
+	Preprocess [label="Preprocess Data" shape=box]
+	MergeCustomer [label="Merge with Customer Data" shape=box]
+	MergeCoords [label="Merge with Cooridinates Data" shape=box]
+	Save [label="Save Processed Data" shape=box]
+	Groupage -> Load
+	Innight -> Load
+	Pallet -> Load
+	RoadFreight -> Load
+	Customer -> MergeCustomer
+	Coordinates -> MergeCoords
+	Load -> Combine
+	Combine -> Preprocess
+	Preprocess -> MergeCustomer
+	MergeCustomer -> MergeCoords
+	MergeCoords -> Save
+	fontsize=20 label="Data Preparation Pipeline Diagram" labelloc=t
+}
